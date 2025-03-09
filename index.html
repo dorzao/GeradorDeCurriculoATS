@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Currículos ATS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Gerador de Currículos ATS</h1>
+
+  <!-- Formulário -->
+  <div id="folha-formulario" class="folha">
+    <div id="conteudo-formulario" class="conteudo">
+      <div id="cabecalho-formulario" class="cabecalho">
+        <!-- Cabeçalho do formulário -->
+        <div id="info-formulario" class="info">
+          <!-- Info do Formulário -->
+          <input id="campo-nome" type="text" placeholder="Nome" />
+          <input id="campo-cargo" type="text" placeholder="Cargo Pretendido" />
+          <div id="pessoais-formulario">
+            <input id="idade-formulario" type="number" placeholder="Idade" style="font-size: 14px" />
+            <select id="estadocivil-formulario" style="font-size: 14px">
+              <option value="solteiro">Solteiro</option>
+              <option value="casado">Casado</option>
+              <option value="divorciado">Divorciado</option>
+              <option value="viuvo">Viúvo</option>
+            </select>
+            <input id="local-formulario" type="text" placeholder="Localização" style="font-size: 14px" />
+          </div>
+        </div>
+
+        <!-- Foto do formulário -->
+        <div id="foto-formulario" class="foto">
+          <label id="label-toggle-foto" for="input-foto">Adicionar Foto</label>
+          <input type="file" id="input-foto" style="display:none;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Visualizador</h2>
+
+  <!-- Visualizador -->
+  <div id="folha-rascunho" class="folha">
+    <div id="conteudo-rascunho" class="conteudo">
+      <div id="cabecalho-rascunho" class="cabecalho">
+        <!-- Cabeçalho do visualizador -->
+        <div id="info-rascunho" class="info">
+          <!-- Info do Visualizador -->
+          <label id="label-nome"></label>
+          <label id="label-cargo"></label>
+          <div id="pessoais-rascunho">
+            <label id="idade-label"></label>
+            <label id="estadocivil-label"></label>
+            <label id="local-label"></label>
+          </div>
+        </div>
+
+        <!-- Foto do visualizador -->
+        <div id="foto-rascunho" class="foto"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
