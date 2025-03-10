@@ -1,202 +1,146 @@
-/* Resetando algumas configurações padrões */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Estilo para o corpo da página */
+/* Definições iniciais para a página */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Estilo para as folhas do formulário e do visualizador */
+h1 {
+  margin: 20px 0;
+}
+
 .folha {
   width: 210mm;
   height: 297mm;
-  border: 2px solid #000; /* Borda preta para as folhas */
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
-  justify-content: center; /* Centraliza o conteúdo */
-  align-items: center; /* Centraliza o conteúdo verticalmente */
-  margin: 20px auto; /* Centraliza a folha na tela */
-  padding: 25mm; /* Margem interna de 25mm em todos os lados */
-  box-sizing: border-box; /* Considera a borda e o padding no cálculo */
+  justify-content: center;
+  border: 2px solid green;
 }
 
-/* Estilo para o conteúdo dentro da folha */
 .conteudo {
   width: 160mm;
   height: 247mm;
-  border: 2px solid #f0f0f0; /* Cor da borda do conteúdo */
+  border: 2px solid red;
+  margin: 25mm;
   box-sizing: border-box;
-}
-
-/* Ajustes visuais para a folha do formulário e visualizador */
-#folha-formulario, #folha-rascunho {
-  background-color: #f9f9f9; /* Fundo mais claro para as folhas */
-}
-
-/* Estilo para os cabeçalhos */
-.cabecalho {
-  width: 160mm;
-  text-align: left;
-  padding: 10px 0;
-  border-bottom: 2px solid #000; /* Borda inferior para o cabeçalho */
-  display: flex;
-  justify-content: flex-start; /* Alinha os itens à esquerda */
-  align-items: center;
-  position: relative; /* Para o posicionamento absoluto da foto */
-  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites */
-}
-
-/* Estilo para a foto do formulário */
-#foto-formulario {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  width: 120px; /* Ajuste conforme necessário */
-  height: 120px; /* Ajuste conforme necessário */
-  background-color: #f0f0f0; /* Cor de fundo do círculo */
-  border-radius: 50%;
-  border: 2px solid #000;
 }
 
-/* Centralizando o botão de adicionar foto dentro do círculo */
-#label-toggle-foto {
-  position: absolute;
-  text-align: center;
-  font-size: 14px;
-  cursor: pointer;
-  z-index: 10; /* Garantir que o label fique sobre o input */
+#cabecalho-formulario, #cabecalho-rascunho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha os itens ao centro */
+  width: 100%;
+  max-width: 160mm;
 }
 
-/* Escondendo o input de foto */
-#input-foto {
-  display: none;
-}
-
-/* Estilo para os campos do formulário (nome e cargo) */
-#campo-nome, #campo-cargo {
-  font-weight: bold;
-  max-width: 160mm; /* Limita a largura a 160mm */
-  margin: 0; /* Remove qualquer margem adicional */
+#info-formulario, #info-rascunho {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   position: relative;
+}
+
+#info-formulario {
+  max-width: 110mm;
 }
 
 #campo-nome {
   font-size: 50px;
-  max-width: calc(160mm - 120px);
-  margin-bottom: 0; /* Remove margem extra */
+  margin-bottom: 5px;
+  position: relative;
 }
 
 #campo-cargo {
   font-size: 22px;
-  max-width: calc(160mm - 120px);
+  margin-bottom: 5px;
 }
 
-/* Estilo para os campos de entrada no formulário */
-#pessoais-formulario input, #pessoais-formulario select {
+#pessoais-formulario input,
+#pessoais-formulario select {
   font-size: 14px;
-  margin-right: 10px;
-  padding: 5px;
-  width: 100%;
+  margin-right: 2px;
+  margin-bottom: 5px;
+  max-width: 160mm;
 }
 
 #pessoais-formulario {
   display: flex;
-  flex-direction: row; /* Disposição horizontal */
-  gap: 10px;
-  margin-top: 10px;
-  max-width: calc(160mm - 120px); /* Garante que os campos de informações não ultrapassem a largura da foto */
+  justify-content: space-between;
+  max-width: 160mm;
 }
 
-/* Estilo para as divs de pessoais (formulário) */
-#pessoais-formulario input, #pessoais-formulario select {
-  width: 48%; /* Ajusta os campos para caberem lado a lado */
+.foto {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #eee;
+  background-position: center;
+  background-size: cover;
+  margin-top: 20px;
 }
 
-/* Estilo para os campos do rascunho */
-#info-rascunho {
-  display: flex;
-  flex-direction: column;
+#label-toggle-foto {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Visualizador */
+#foto-rascunho {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #eee;
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+
+/* Tema claro */
+body.claro {
+  background-color: white;
+  color: black;
+}
+
+body.claro .folha {
+  border: 1px solid #000;
+}
+
+body.claro .conteudo {
+  background-color: white;
+}
+
+/* Tema escuro */
+body.escuro {
+  background-color: black;
+  color: white;
+}
+
+body.escuro .folha {
+  border: 1px solid #fff;
+}
+
+body.escuro .conteudo {
+  background-color: #000000;
 }
 
 #label-nome {
   font-size: 50px;
-  font-weight: bold;
 }
 
 #label-cargo {
   font-size: 22px;
-  font-weight: bold;
-}
-
-/* Ajuste de disposição dos campos pessoais no rascunho */
-#pessoais-rascunho {
-  display: flex;
-  flex-direction: row; /* Disposição horizontal */
-  gap: 10px;
-  font-size: 14px;
-}
-
-/* Estilo para os campos pessoais no rascunho */
-#pessoais-rascunho label {
-  font-size: 14px;
-}
-
-/* Ajuste de alinhamento de divs info e foto */
-#info-formulario, #info-rascunho {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinha à esquerda */
-}
-
-/* Estilo para a foto do rascunho */
-#foto-rascunho {
-  width: 120px;
-  height: 120px;
-  background-color: #ddd;
-  border-radius: 50%;
-  border: 2px solid #000;
-  right: 10px;
-  position: absolute;
-  top: auto;
-  display: none; /* A foto do rascunho está oculta */
-}
-
-/* Estilo para as divs pessoais no formulário */
-#pessoais-formulario, #pessoais-rascunho {
-  font-size: 14px;
-  gap: 10px; /* Espaço entre os campos */
-  display: flex;
-  flex-direction: row; /* Disposição horizontal */
-}
-
-/* Ajuste nos inputs dentro de pessoais */
-#pessoais-formulario input, #pessoais-formulario select {
-  width: 48%; /* Ajuste para que os campos fiquem lado a lado */
-}
-
-/* Especificação para o campo de foto */
-#foto-preview {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #f0f0f0;
-  background-size: cover;
-  background-position: center;
-}
-
-#add-foto-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 12px;
-  background-color: #fff;
-  border: 2px solid #000;
-  padding: 5px;
-  cursor: pointer;
 }

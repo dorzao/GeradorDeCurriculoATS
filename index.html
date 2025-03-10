@@ -9,6 +9,23 @@
 <body>
   <h1>Gerador de Currículos ATS</h1>
 
+  <!-- Opções de Modelo, Tema e Margem -->
+  <div id="opcoes-configuracao">
+    <label for="modelo-select">Modelo:</label>
+    <select id="modelo-select">
+      <option value="duas-colunas">Duas colunas</option>
+    </select>
+
+    <label for="tema-select">Tema:</label>
+    <select id="tema-select">
+      <option value="claro">Claro</option>
+      <option value="escuro">Escuro</option>
+    </select>
+
+    <label for="margem-input">Margem:</label>
+    <input id="margem-input" type="number" value="25" min="10" max="50" />
+  </div>
+
   <!-- Formulário -->
   <div id="folha-formulario" class="folha">
     <div id="conteudo-formulario" class="conteudo">
@@ -61,8 +78,11 @@
         <div id="foto-rascunho" class="foto"></div>
       </div>
     </div>
-    <h2> Fazendo um teste de negocio</h2>
+
+    <!-- Botão Gerar PDF -->
+    
   </div>
+  
 
   <script src="scripts.js"></script>
 </body>
