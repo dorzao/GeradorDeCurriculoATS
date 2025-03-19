@@ -1,146 +1,241 @@
-/* Definições iniciais para a página */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body{
+  justify-items: center;
 }
 
 h1 {
-  margin: 20px 0;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#menu {
+  display: flex;
+  direction: row;
+  height: 150px;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(248, 202, 117);
+}
+
+#tamanho-margem{
+  height: auto;
 }
 
 .folha {
+  height: auto;
   width: 210mm;
-  height: 297mm;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
   border: 2px solid green;
+  display: flex;
+  max-height: 297mm;
 }
 
 .conteudo {
-  width: 160mm;
-  height: 247mm;
-  border: 2px solid red;
+  min-width: 160mm;
+  min-height: 247mm;
   margin: 25mm;
-  box-sizing: border-box;
-  position: relative;
+  border: 2px solid red;
+  flex-grow: 1;
+  height: 100%;
 }
 
-#cabecalho-formulario, #cabecalho-rascunho {
+.cabecalho {
+  margin: 1px;
+  width: auto;
+  height: 140px;
+  border: 1px solid yellow;
   display: flex;
+  direction: row;
   justify-content: space-between;
-  align-items: center; /* Alinha os itens ao centro */
-  width: 100%;
-  max-width: 160mm;
 }
 
-#info-formulario, #info-rascunho {
+.info-box {
+  border: 1px solid purple;
+  margin: 1px;
+  --largura-info-box: calc(160mm - 140px);
+  min-width: var(--largura-info-box);
+  max-width: 210mm;
+  width: auto;
+  padding: 2px;
+  padding-right: 4px;
+  left: 0;
+  flex-grow: 1;
+  
+}
+
+.pessoais{
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
+  direction: row;
+  border: 1px solid green ;
+  padding: 1px;
 }
 
-#info-formulario {
-  max-width: 110mm;
+.pessoais, .pessoais *{
+  max-height: 20px;
 }
 
-#campo-nome {
+.pessoais label {
+  font-size: 14px;
+}
+
+#pessoais-rascunho{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  justify-content: left;
+}
+
+#campo-idade {
+  width: 30px;
+  
+}
+
+
+
+.foto {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid orange;
+  margin: 1px;
+  right: 0;
+  /*display: none;*/
+}
+
+#foto-formulario {
+  justify-content: space-between;
+  align-items: center;
+}
+
+#botao-adicionar-remover-foto {
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 120px;
+  width: 120px;
+  background-color: transparent;
+}
+
+#botao-adicionar-remover-foto:hover {
+  background-color: rgba(0, 100, 0, 0.6);
+  transform: ;
+  transition: background-color 0.5s ease-in-out;
+}
+
+#botao-oculto-procurar {
+  display: none;
+}
+
+.campo {
+  min-width: inherit;
+  width: 100%;
+  margin: 2px;
+  flex-basis: 1;
+  flex-grow: 1;
+  box-sizing: border-box;
+  
+}
+
+#campo-nome  {
   font-size: 50px;
-  margin-bottom: 5px;
-  position: relative;
+   
 }
 
 #campo-cargo {
   font-size: 22px;
-  margin-bottom: 5px;
 }
 
-#pessoais-formulario input,
-#pessoais-formulario select {
-  font-size: 14px;
-  margin-right: 2px;
-  margin-bottom: 5px;
-  max-width: 160mm;
-}
 
-#pessoais-formulario {
-  display: flex;
-  justify-content: space-between;
-  max-width: 160mm;
-}
 
-.foto {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #eee;
-  background-position: center;
-  background-size: cover;
-  margin-top: 20px;
-}
 
-#label-toggle-foto {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  font-size: 14px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-/* Visualizador */
-#foto-rascunho {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #eee;
-  background-position: center;
-  background-size: cover;
-  display: none;
-}
-
-/* Tema claro */
-body.claro {
-  background-color: white;
-  color: black;
-}
-
-body.claro .folha {
-  border: 1px solid #000;
-}
-
-body.claro .conteudo {
-  background-color: white;
-}
-
-/* Tema escuro */
-body.escuro {
-  background-color: black;
-  color: white;
-}
-
-body.escuro .folha {
-  border: 1px solid #fff;
-}
-
-body.escuro .conteudo {
-  background-color: #000000;
-}
 
 #label-nome {
   font-size: 50px;
+  font-weight: bold;
 }
 
 #label-cargo {
   font-size: 22px;
+  font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#gerar-pdf {
+  margin: 20px;
+  font-size: 48px;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print {
+  /* Esconde tudo que não faz parte do conteúdo que você deseja imprimir */
+  * {
+    /*outline: 1px solid red !important; */
+    -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+    color-adjust: exact !important;  /*Firefox*/
+    
+  }
+
+  *:not(#conteudo-rascunho, #conteudo-rascunho *){
+    margin: 0;
+    padding: 0;
+    height: 0;
+    border: 0;
+  }
+
+  body *{
+    display: none;
+  }
+
+  #conteudo-rascunho, #conteudo-rascunho * {
+    display: inherit;
+    border: 0;
+  }
+
+  .info-box{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .foto {
+    background-image: inherit;
+  }
+}  

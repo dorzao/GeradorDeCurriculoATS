@@ -7,83 +7,105 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
   <h1>Gerador de Currículos ATS</h1>
 
-  <!-- Opções de Modelo, Tema e Margem -->
-  <div id="opcoes-configuracao">
-    <label for="modelo-select">Modelo:</label>
-    <select id="modelo-select">
-      <option value="duas-colunas">Duas colunas</option>
-    </select>
 
-    <label for="tema-select">Tema:</label>
-    <select id="tema-select">
-      <option value="claro">Claro</option>
-      <option value="escuro">Escuro</option>
-    </select>
+  <!-- Aqui se inicia o menu ==============================-->
+  <div id="menu">
+    <label for="tamanho-margem" aria-valuemax="tamanho da margem"> Tamanho da margem: </label>
+    <input id="tamanho-margem" type="number" min="1" max="25" value="25">
+    <label for="foto-toggle-menu"> Foto ? </label>
+    <input id="foto-toggle-menu" type='checkbox' checked>
+  </div> <!-- Fim do menu! -->
 
-    <label for="margem-input">Margem:</label>
-    <input id="margem-input" type="number" value="25" min="10" max="50" />
-  </div>
+  <!-- Fim do menu ======================================== -->
 
-  <!-- Formulário -->
-  <div id="folha-formulario" class="folha">
-    <div id="conteudo-formulario" class="conteudo">
-      <div id="cabecalho-formulario" class="cabecalho">
-        <!-- Cabeçalho do formulário -->
-        <div id="info-formulario" class="info">
-          <!-- Info do Formulário -->
-          <input id="campo-nome" type="text" placeholder="Nome" />
-          <input id="campo-cargo" type="text" placeholder="Cargo Pretendido" />
-          <div id="pessoais-formulario">
-            <input id="idade-formulario" type="number" placeholder="Idade" style="font-size: 14px" />
-            <select id="estadocivil-formulario" style="font-size: 14px">
-              <option value="solteiro">Solteiro</option>
-              <option value="casado">Casado</option>
-              <option value="divorciado">Divorciado</option>
-              <option value="viuvo">Viúvo</option>
-            </select>
-            <input id="local-formulario" type="text" placeholder="Localização" style="font-size: 14px" />
-          </div>
-        </div>
+ <div id="folha-formulario" class="folha">
 
-        <!-- Foto do formulário -->
-        <div id="foto-formulario" class="foto">
-          <label id="label-toggle-foto" for="input-foto">Adicionar Foto</label>
-          <input type="file" id="input-foto" style="display:none;" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="conteudo-formulario" class="conteudo">
 
-  <h2>Visualizador</h2>
+    <div id="cabecalho-formulario" class="cabecalho">
 
-  <!-- Visualizador -->
-  <div id="folha-rascunho" class="folha">
-    <div id="conteudo-rascunho" class="conteudo">
-      <div id="cabecalho-rascunho" class="cabecalho">
-        <!-- Cabeçalho do visualizador -->
-        <div id="info-rascunho" class="info">
-          <!-- Info do Visualizador -->
-          <label id="label-nome"></label>
-          <label id="label-cargo"></label>
-          <div id="pessoais-rascunho">
-            <label id="idade-label"></label>
-            <label id="estadocivil-label"></label>
-            <label id="local-label"></label>
-          </div>
-        </div>
+      <div id="info-box-formulario" class="info-box">
+        <input type="text" id="campo-nome" class="campo" placeholder="Nome">
+        <input type="text" id="campo-cargo" class="campo" placeholder="Cargo">
+        <div id="pessoais-formulario" class="pessoais">
 
-        <!-- Foto do visualizador -->
-        <div id="foto-rascunho" class="foto"></div>
-      </div>
-    </div>
+          <label for="campo-idade"> Idade: </label>
+          <input type="number" id="campo-idade">
+          <label for="campo-estado-civil">Estado Civil: </label>
+          <select id="campo-estado-civil">
 
-    <!-- Botão Gerar PDF -->
-    
-  </div>
-  
+            <option></option>
+            <option>Solteiro(a) </option>
+            <option> Casado(a) </option>
+            <optgroup> Viuvo(a) </optgroup>
 
-  <script src="scripts.js"></script>
+          </select> <!-- Fim do campo Estado civil. -->
+          <label for="campo-local"> Local: </label>
+          <input type="text" id="campo-local" placeholder="ex: Belo Horizonte - MG">
+
+        </div> <!-- Fim do pessoais -->
+
+
+      </div> <!-- Fim da info box do formulário-->
+      <div id="foto-formulario" class="foto">
+
+        <button id="botao-adicionar-remover-foto"> Adicionar Foto</button>
+        <input type="file" id="botao-oculto-procurar">
+
+      </div> <!-- Fim foto do formulário-->
+
+    </div> <!-- Fim do cabeçalho de formulario-->
+
+  </div> <!-- Fim do conteúdo do formulário-->
+ </div> <!-- Fim da folha do formulário-->
+
+
+
+
+
+
+
+
+ <!-- ========================= Área de Vizualização =========================-->
+ <h1> Vizualizar Resultado</h1>
+
+ <div id="folha-rascunho" class="folha">
+
+  <div id="conteudo-rascunho" class="conteudo">
+
+    <div id="cabecalho-rascunho" class="cabecalho">
+
+      <div id="info-box-rascunho" class="info-box">
+
+        <label id="label-nome"> Nome </label> <br>
+        <label id="label-cargo"> Cargo </label>
+        <div id="pessoais-rascunho" class="pessoais">
+
+          <label id="label-idade"> idade </label>
+          <label id="label-estado-civil"> Estado civil</label>
+          <label id="label-local"> local </label>
+
+        </div> <!-- Fim do pessoais do rascunho-->
+
+      </div> <!-- Fim do info box do rascunho -->
+      <div id="foto-rascunho" class="foto">
+
+      </div> <!-- Fim foto do rascunho-->
+
+    </div> <!-- Fim cabeçalho rascunho -->
+
+  </div> <!-- Fim do conteúdo do Rascunho-->
+
+ </div> <!-- Fim da folha de rascunho-->
+
+ <!-- ======================= Fim da área de vizualização ===========-->
+
+ <button id="gerar-pdf"> Gerar PDF</button>
+
+  <script type="module" src="./scripts.js"></script>
 </body>
 </html>
