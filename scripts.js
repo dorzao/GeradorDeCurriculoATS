@@ -3,11 +3,13 @@ import { ConfigurarMargem } from "./js/configurarMargem.js";
 import {AtualizarTodosDados} from "./js/atualizarTodosDados.js";
 import { FuncoesAdicionarRemoverFoto } from "./js/funcoesAdicionarRemoverFoto.js";
 import {GerarPDF} from "./js/gerarPDF.js";
+import { AdicionarNovoContato } from "./js/adicionarNovoContato.js";
 
 // Instanciando importações
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM completamente carregado!");
   new FotoToggleMenu();
+  
   
 });
 
@@ -16,5 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 new ConfigurarMargem();
 new AtualizarTodosDados();
 new FuncoesAdicionarRemoverFoto();
+
 new GerarPDF();
+new AdicionarNovoContato();
 
