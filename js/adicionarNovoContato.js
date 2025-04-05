@@ -1,4 +1,5 @@
 import { Icone } from "./icone.js";
+import { AdicionarRemoverFoto } from "./adicionarRemoverFoto.js";
 
 export class AdicionarNovoContato {
     constructor() {
@@ -23,8 +24,20 @@ export class AdicionarNovoContato {
         let novoContatoRascunho = this.criarNovoContatoDiv();
 
         // Criar o ícone
-        let icone = new Icone('+');
-        let divIcone = icone.gerandoDivIcone();
+        
+        let divIcone = this.criarDivIconeFormulario();
+        let botaoIconeFormulario = this.criarBotaoIconeFormulario();
+        let botaoProcurarIcone = this.criarBotaoProcurarIcone();
+
+
+
+        let divIconeRascunho = this.criarDivIconeRascunho();
+
+        //Adicionando elementos ao icone formulario
+        divIcone.append(botaoIconeFormulario);
+        divIcone.append(botaoProcurarIcone);
+        new AdicionarRemoverFoto(botaoProcurarIcone, botaoIconeFormulario, divIcone, divIconeRascunho);
+
 
         // Criando label e campo de descrição
         let campoDescricaoContato = this.criarCampoDescricaoContato();
@@ -49,6 +62,7 @@ export class AdicionarNovoContato {
         novoContato.appendChild(botaoX);
 
         //Adicionando elementos a caixa do rascunho 
+        novoContatoRascunho.append(divIconeRascunho);
         novoContatoRascunho.append(labelDescricao);
         novoContatoRascunho.append(labelTextoLink);
         
@@ -67,18 +81,52 @@ export class AdicionarNovoContato {
         campoLink.addEventListener('input', () => this.atualizarLink(labelTextoLink, campoLink.value));
 
         // Adicionando o novo contato após o botão, não antes dele
-        this.caixaInfocontatoFormulario.appendChild(novoContato);
+        this.caixaInfocontatoFormulario.insertBefore(novoContato, this.botaoAdicionarContato);
         this.caixaInfocontatoRascunho.appendChild(novoContatoRascunho);
     }
 
     criarNovoContatoDiv () {
         let novoContato = document.createElement('div');
-        novoContato.style.border = '2px solid red';
+        //novoContato.style.border = '2px solid red';
         novoContato.style.padding = '2px'; // Adicionando algum padding para espaçamento
         novoContato.style.marginBottom = '2px'; // Adicionando margem para separar os contatos
         novoContato.style.display = 'flex';
         novoContato.style.flexDirection = 'row';
         return novoContato;
+    }
+
+    criarDivIconeFormulario () {
+        let divIcone = document.createElement('div');
+        divIcone.style.width = '6mm';
+        divIcone.style.height = '6mm';
+        divIcone.style.border = '1px solid black';
+        divIcone.style.marginRight = '3px';
+        return divIcone;
+    }
+
+    criarBotaoIconeFormulario () {
+        let botao = document.createElement('button');
+        botao.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        botao.textContent = '+';
+        
+        return botao;
+    }
+
+    criarBotaoProcurarIcone () {
+        let botao = document.createElement('input');
+        botao.type = 'file';
+        botao.style.display = 'none';
+        return botao;
+    }
+
+    criarDivIconeRascunho () {
+        let icone = document.createElement('div');
+        icone.style.width = '6mm';
+        icone.style.height = '6mm';
+        icone.style.border = '1px solid blue';
+        icone.style.marginRight = '2mm';
+
+        return icone;
     }
 
     criarCampoDescricaoContato () {

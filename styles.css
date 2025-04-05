@@ -150,6 +150,7 @@ h1 {
   border: 1px solid pink;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   
 }
 
@@ -157,10 +158,10 @@ h1 {
   background-color: rgb(200, 200, 200);
   display: flex;
   flex-direction: column;
-  min-width: 77mm;
-  max-width: 105mm;
+  
   margin-right: 6mm;
   margin-bottom: 6mm;
+  flex: 1 1 48%;
 }
 
 .sessao-par{
@@ -171,6 +172,17 @@ h1 {
   font-size: 18px;
   color: rgb(50, 50, 250);
   font-weight: bold;
+}
+
+.titulo-sessao{
+  margin-bottom: 2mm;
+}
+
+.botao-add-formulario {
+  background-color: green;
+  margin: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #paragrafo-objetivo {
@@ -280,6 +292,11 @@ h1 {
 
   .foto {
     background-image: inherit;
+  }
+
+  #caixa-infocontato-rascunho {
+    display: flex;
+    flex-direction: column;
   }
 
   @page {

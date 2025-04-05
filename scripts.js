@@ -4,6 +4,7 @@ import {AtualizarTodosDados} from "./js/atualizarTodosDados.js";
 import { FuncoesAdicionarRemoverFoto } from "./js/funcoesAdicionarRemoverFoto.js";
 import {GerarPDF} from "./js/gerarPDF.js";
 import { AdicionarNovoContato } from "./js/adicionarNovoContato.js";
+import { AdicionarNovaTecnologia } from "./js/adicionarNovaTecnologia.js";
 
 // Instanciando importações
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,4 +22,5 @@ new FuncoesAdicionarRemoverFoto();
 
 new GerarPDF();
 new AdicionarNovoContato();
+new AdicionarNovaTecnologia();
 

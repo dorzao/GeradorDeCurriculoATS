@@ -4,6 +4,8 @@ import { AtualizarIdade } from "./atualizarIdade.js";
 import { AtualizarEstadoCivil } from "./atualizarEstadoCivil.js";
 import { AtualizarLocal } from "./atualizarLocal.js";
 import { AtualizarSessaoObjetivo } from "./atualizarSessaoObjetivo.js";
+import { AtualizarTituloContato } from "./atualizarTituloContato.js";
+import { AtualizarTituloTecnologias } from "./atualizarTituloTecnologias.js";
 
 export class AtualizarTodosDados {
     constructor () {
@@ -13,5 +15,7 @@ export class AtualizarTodosDados {
         new AtualizarEstadoCivil();
         new AtualizarLocal();
         new AtualizarSessaoObjetivo();
+        new AtualizarTituloContato();
+        new AtualizarTituloTecnologias();
     }
 }
