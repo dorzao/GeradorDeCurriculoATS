@@ -1,12 +1,11 @@
+import {AtualizarTexto} from './atualizarTexto.js';
+
 export class AtualizarTituloContato {
     constructor() {
         this.campo = document.getElementById('campo-titulo-infocontato');
         this.titulo = document.getElementById('titulo-infocontato');
 
-        this.campo.addEventListener('input', () => this.atualizarTituloContato());
+        new AtualizarTexto(this.campo, this.titulo);
     }
 
-    atualizarTituloContato () {
-        this.titulo.textContent = this.campo.value;
-    }
 }

@@ -27,6 +27,7 @@ h1 {
   border: 2px solid green;
   display: flex;
   max-height: 297mm;
+  
 }
 
 .conteudo {
@@ -36,6 +37,7 @@ h1 {
   border: 2px solid red;
   flex-grow: 1;
   height: 100%;
+  
 }
 
 .cabecalho {
@@ -152,6 +154,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   
+  
 }
 
 .sessao {
@@ -193,6 +196,14 @@ h1 {
   resize: none;
 }
 
+.caixa-itens {
+  display: flex;
+  flex-direction: column;
+}
+
+.sessao-fim {
+  margin-bottom: 0;
+}
 
 
 
@@ -302,5 +313,6 @@ h1 {
   @page {
     margin: 0mm 0mm 0mm 0mm;
     size: auto;
+    margin-bottom: 0;
   }
 }  

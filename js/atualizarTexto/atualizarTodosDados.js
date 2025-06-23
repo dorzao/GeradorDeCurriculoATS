@@ -6,6 +6,8 @@ import { AtualizarLocal } from "./atualizarLocal.js";
 import { AtualizarSessaoObjetivo } from "./atualizarSessaoObjetivo.js";
 import { AtualizarTituloContato } from "./atualizarTituloContato.js";
 import { AtualizarTituloTecnologias } from "./atualizarTituloTecnologias.js";
+import { AtualizarTituloExperiencia } from './atualizarTituloExperiencia.js';
+import { AtualizarTituloFormacao } from "./atualizarTituloFormacao.js";
 
 export class AtualizarTodosDados {
     constructor () {
@@ -17,5 +19,7 @@ export class AtualizarTodosDados {
         new AtualizarSessaoObjetivo();
         new AtualizarTituloContato();
         new AtualizarTituloTecnologias();
+        new AtualizarTituloExperiencia();
+        new AtualizarTituloFormacao();
     }
 }

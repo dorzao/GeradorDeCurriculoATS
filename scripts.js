@@ -1,10 +1,11 @@
 import { FotoToggleMenu } from "./js/fotoToggleMenu.js";
 import { ConfigurarMargem } from "./js/configurarMargem.js";
-import {AtualizarTodosDados} from "./js/atualizarTodosDados.js";
+import {AtualizarTodosDados} from "./js/atualizarTexto/atualizarTodosDados.js";
 import { FuncoesAdicionarRemoverFoto } from "./js/funcoesAdicionarRemoverFoto.js";
 import {GerarPDF} from "./js/gerarPDF.js";
 import { AdicionarNovoContato } from "./js/adicionarNovoContato.js";
 import { AdicionarNovaTecnologia } from "./js/adicionarNovaTecnologia.js";
+import { AdicionarNovoProjeto } from "./js/adicionarNovoProjeto.js";
 
 // Instanciando importações
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,4 +24,5 @@ new FuncoesAdicionarRemoverFoto();
 new GerarPDF();
 new AdicionarNovoContato();
 new AdicionarNovaTecnologia();
+new AdicionarNovoProjeto();
 
